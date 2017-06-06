@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <menu-bar></menu-bar>
+  <div class="container">
     <router-view></router-view>
   </div>
 </template>
 
-<script>
-import store from './store';
-import MenuBar from './components/MenuBar.vue';
+<style lang="scss">
+.container {
+  width: 800px;
+  margin: 30px 50px;
+}
 
-export default {
-  store,
-  components: {
-    MenuBar,
-  },
-};
-</script>
+.border {
+  border: solid 1px #000000;
+}
+</style>

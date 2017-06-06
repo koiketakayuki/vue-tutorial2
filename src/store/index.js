@@ -7,12 +7,9 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    shop: null,
+    categories: [],
     menus: [],
-    targetMenu: null,
-    isEditMode: false,
-    isDeleteConfimationMode: false,
-    hasInformation: false,
-    information: null,
   },
   mutations,
   actions,

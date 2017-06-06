@@ -1,15 +1,19 @@
-import { getShop, getCategories } from '../ekiten-api';
-
+import EkitenAPI from '../ekiten-api';
 
 const actions = {
   fetchShop({ commit }, shopId) {
-    getShop(shopId).then((shop) => {
+    EkitenAPI.getShop(shopId).then((shop) => {
       commit('receiveShop', shop);
     });
   },
   fetchCategories({ commit }, shopId) {
-    getCategories(shopId).then((categories) => {
+    EkitenAPI.getCategories(shopId).then((categories) => {
       commit('receiveCategories', categories);
+    });
+  },
+  fetchMenus({ commit }, shopId) {
+    EkitenAPI.getCategories(shopId).then((menus) => {
+      commit('receiveMenus', menus);
     });
   },
 };
