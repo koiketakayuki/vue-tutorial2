@@ -50,7 +50,11 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  eslint: {
+    configFile: './.eslintrc',
+    formatter: require('eslint-friendly-formatter')
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
