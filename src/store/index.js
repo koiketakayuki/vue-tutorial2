@@ -1,7 +1,7 @@
-const Vue = require('vue');
-const Vuex = require('vuex');
-const mutations = require('./mutations');
-const actions = require('./actions');
+import Vue from 'vue';
+import Vuex from 'vuex';
+import mutations from './mutations';
+import actions from './actions';
 
 Vue.use(Vuex);
 

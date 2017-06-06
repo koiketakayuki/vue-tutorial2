@@ -5,7 +5,7 @@ const shop = {
 
 const categories = ['test'];
 
-const EkitenAPI = {
+const ekitenAPI = {
   getShop() {
     return new Promise((success) => {
       success(shop);
@@ -18,4 +18,4 @@ const EkitenAPI = {
   },
 };
 
-export default EkitenAPI;
+export default ekitenAPI;

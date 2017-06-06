@@ -1,13 +1,14 @@
-const EkitenAPI = require('../ekiten-api');
+import { getShop, getCategories } from '../ekiten-api';
+
 
 const actions = {
   fetchShop({ commit }, shopId) {
-    EkitenAPI.getShop(shopId).then((shop) => {
+    getShop(shopId).then((shop) => {
       commit('receiveShop', shop);
     });
   },
   fetchCategories({ commit }, shopId) {
-    EkitenAPI.getCategories(shopId).then((categories) => {
+    getCategories(shopId).then((categories) => {
       commit('receiveCategories', categories);
     });
   },
