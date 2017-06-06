@@ -5,8 +5,10 @@
       <tr>
         <th>カテゴリ名</th>
       </tr>
-      <tr v-for="(category, id) in categories">
-        <td @click="selectCategory(id)">{{ category }}</td>
+      <tr
+        v-for="(category, id) in categories"
+        @click="selectCategory(id)">
+        <td>{{ category }}</td>
       </tr>
     </table>
   </div>
@@ -20,8 +22,8 @@ export default {
     },
   },
   methods: {
-    selectCategory() {
-      this.$router.push({ path: 'menu', query: { plan: 'private' }})
+    selectCategory(categoryId) {
+      this.$router.push({ path: this.props.shopId , params: { categoryId } })
     }
   },
 };

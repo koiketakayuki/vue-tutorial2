@@ -6,32 +6,31 @@
         <p>{{ shop.name }}</p>
         </div>
     </div>
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  created() {
-    const shopId = this.shopId;
-
-    if (shopId) {
-      this.$store.dispatch('fetchShop', shopId);
-      this.$store.dispatch('fetchCategories', shopId);
-      this.$store.dispatch('fetchMenus', shopId);
-    }
-  },
   computed: {
     shop() {
       return this.$store.state.shop;
     },
   },
-  props: {
-    shopId: {
-      type: Number,
-      required: true,
-    }
+  created() {
+    this.initialize();
   },
+  updated() {
+    this.initialize();
+  },
+  initialize() {
+    const shopId = this.$route.query.shopId;
+    this.$store.dispatch('fetchShop', shopId);
+    this.$store.dispatch('fetchCategories', shopId);
+    this.$store.dispatch('fetchMenus', shopId);
+  }
 };
 </script>
 

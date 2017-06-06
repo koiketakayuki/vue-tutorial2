@@ -4,9 +4,11 @@
   </div>
 </template>
 
+<script>
+</script>
+
 <style lang="scss">
 .container {
-  width: 800px;
   margin: 30px 50px;
 }
 

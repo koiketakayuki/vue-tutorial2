@@ -20,6 +20,9 @@
 
 export default {
   computed: {
+    selectedCategory() {
+      return this.$store.state.selectedCategory;
+    },
     menus() {
       return this.$store.state.menus;
     }

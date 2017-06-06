@@ -4,14 +4,12 @@ import CategoryList from './components/CategoryList.vue';
 
 const routes = [
   {
-    path: '/shop-:shopId(\\d+)',
+    path: '/:shopId(\\d+)',
     component: ShopInformation,
-    props: true,
     children: [
       {
-        path: 'category-:categoryId(\\d+)',
+        path: ':categoryId(\\d+)',
         component: MenuList,
-        props: true,
       },
       {
         path: '*',
