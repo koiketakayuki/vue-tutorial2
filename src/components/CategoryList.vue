@@ -1,5 +1,5 @@
 <template>
-  <div class="border">
+  <div>
     <h2>CategoryList</h2>
     <table>
       <tr>

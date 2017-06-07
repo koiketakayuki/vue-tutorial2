@@ -4,15 +4,8 @@
   </div>
 </template>
 
-<script>
-</script>
-
-<style lang="scss">
+<style>
 .container {
   margin: 30px 50px;
-}
-
-.border {
-  border: solid 1px #000000;
 }
 </style>
