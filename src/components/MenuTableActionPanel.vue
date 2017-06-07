@@ -1,26 +1,24 @@
 <template>
   <div class="panel_base js_list_utility">
-    <div class="panel_content_base panel_content-around">
+    <div class="panel_content_base panel_content-around position-relative">
       <div class="media_base">
         <div class="fixed_block">
           選択中のカテゴリ：
           <span>
             <label class="select_base">
-              <select name="cat">
-                <option value="">▼ 小ジャンル</option>
-                <option value="0203">エステ</option>
+              <select v-model="selectedCategoryId">
+                <option
+                  v-for="category in categories"
+                  :value="category.id">{{ category.name }}({{ countMenuByCategoryId(category.id) }})</option>
               </select>
             </label>
           </span>
         </div>
-        <div class="fixed_block">
-          全<span class="menu_count">{{ menuCount }}</span><span class="sub_text">件</span>
-        </div>
-        <div class="fixed_block">
+        <div class="fixed_block actions">
           <ul class="button_list">
             <li>
               <a href="#" class="button_base">
-                <i class="icon_base fa fa-refresh"></i>一括更新
+                <i class="icon_base fa fa-refresh"></i>一括編集
               </a>
             </li>
             <li>
@@ -42,23 +40,27 @@
 </template>
 
 <script>
+import { sortBy } from 'lodash';
+
 export default {
   computed: {
-    selectedCategoryName() {
-      return "test";
+    selectedCategoryId: {
+      get() {
+        return this.$store.state.selectedCategoryId;
+      },
+      set: function (categoryId) {
+        this.$router.push({ path: categoryId.toString()});
+        this.$store.commit('setCategoryId', categoryId);
+      },
     },
-    menuCount() {
-      return this.$store.state.menus.length;
+    categories() {
+      return sortBy(this.$store.state.categories, c => c.index);
     },
   },
-}
+  methods: {
+    countMenuByCategoryId(categoryId) {
+      return this.$store.getters.menuCounts[categoryId] || 0;
+    },
+  },
+};
 </script>
-
-<style>
-.menu_count {
-  font-size: 26px;
-  font-weight: bold;
-  margin-right: 3px;
-  margin-left: 3px;
-}
-</style>

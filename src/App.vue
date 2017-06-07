@@ -36,4 +36,17 @@ export default {
 .container {
   margin: 30px 50px;
 }
+
+.position-relative {
+  position: relative;
+}
+
+.actions {
+  position: absolute;
+  right: 20px;
+}
+
+.mt_60 {
+  margin-top: 60px;
+}
 </style>

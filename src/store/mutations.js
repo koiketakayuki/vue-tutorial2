@@ -7,10 +7,13 @@ const mutations = {
   goToEditMode(state) {
     state.viewMode = VIEW_MODE.EDIT_MODE;
   },
+  goToBulkEditMode(state) {
+    state.viewMode = VIEW_MODE.BULK_EDIT_MODE;
+  },
   goToCreateMode(state) {
     state.viewMode = VIEW_MODE.CREATE_MODE;
   },
-  goToOrderChangeMode(state) {
+  goToSortMode(state) {
     state.viewMode = VIEW_MODE.CHANGE_ORDER_MODE;
   },
   receiveShop(state, shop) {

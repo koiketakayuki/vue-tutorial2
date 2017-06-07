@@ -1,6 +1,6 @@
 import ShopInformation from './components/ShopInformation.vue';
 import MenuTable from './components/MenuTable.vue';
-import CategoryList from './components/CategoryList.vue';
+import CategoryTable from './components/CategoryTable.vue';
 
 const routes = [
   {
@@ -14,7 +14,7 @@ const routes = [
       },
       {
         path: '*',
-        component: CategoryList,
+        component: CategoryTable,
       },
     ],
   },
