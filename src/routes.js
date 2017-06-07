@@ -1,15 +1,16 @@
 import ShopInformation from './components/ShopInformation.vue';
-import MenuList from './components/MenuList.vue';
+import MenuTable from './components/MenuTable.vue';
 import CategoryList from './components/CategoryList.vue';
 
 const routes = [
   {
     path: '/:shopId(\\d+)',
     component: ShopInformation,
+    props: true,
     children: [
       {
         path: ':categoryId(\\d+)',
-        component: MenuList,
+        component: MenuTable,
       },
       {
         path: '*',

@@ -13,21 +13,29 @@ const menus = [
   {
     id: 0,
     title: 'title0',
+    price: 1200,
+    isTaxIncluded: true,
     categoryId: 0,
   },
   {
     id: 1,
     title: 'title1',
+    price: 1200,
+    isTaxIncluded: true,
     categoryId: 1,
   },
   {
     id: 2,
     title: 'title2',
+    price: 1200,
+    isTaxIncluded: false,
     categoryId: 2,
   },
   {
     id: 3,
     title: 'title3',
+    price: 1200,
+    isTaxIncluded: true,
     categoryId: 3,
   },
 ];

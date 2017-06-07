@@ -12,7 +12,7 @@ const actions = {
     });
   },
   fetchMenus({ commit }, shopId) {
-    EkitenAPI.getCategories(shopId).then((menus) => {
+    EkitenAPI.getMenus(shopId).then((menus) => {
       commit('receiveMenus', menus);
     });
   },

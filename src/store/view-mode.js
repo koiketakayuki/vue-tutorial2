@@ -1,8 +1,9 @@
 const VIEW_MODE = {
   LIST_MODE: 0,
   EDIT_MODE: 1,
-  CREATE_MODE: 2,
-  CHANGE_ORDER_MODE: 3,
+  BULK_EDIT_MODE: 2,
+  CREATE_MODE: 3,
+  CHANGE_ORDER_MODE: 4,
 };
 
 export default VIEW_MODE;

@@ -22,6 +22,9 @@ const mutations = {
   receiveMenus(state, menus) {
     state.menus = menus;
   },
+  setCategoryId(state, categoryId) {
+    state.selectedCategoryId = categoryId;
+  },
 };
 
 export default mutations;

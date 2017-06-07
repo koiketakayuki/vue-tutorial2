@@ -31,11 +31,5 @@ export default {
       return this.$store.state.shop;
     },
   },
-  created() {
-    const shopId = this.$route.query.shopId;
-    this.$store.dispatch('fetchShop', shopId);
-    this.$store.dispatch('fetchCategories', shopId);
-    this.$store.dispatch('fetchMenus', shopId);
-  },
 };
 </script>
