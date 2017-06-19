@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import mutations from './mutations';
 import actions from './actions';
 import { countBy } from 'lodash';
+import VIEW_MODE from './view-mode';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,9 @@ const store = new Vuex.Store({
     selectedCategoryId: null,
     categories: [],
     menus: [],
+    viewMode: VIEW_MODE.LIST_MODE,
+    message: "",
+    hasInformation: false,
   },
   getters: {
     menuCounts(state) {

@@ -16,6 +16,15 @@ const actions = {
       commit('receiveMenus', menus);
     });
   },
+  updateMenuCategoryOrder({ commit }, menuCategories) {
+    setTimeout(() => {
+      commit('displayInformation', 'メニューを並べ替えました');
+
+      setTimeout(() => {
+        commit('closeInformation');
+      }, 3000);
+    }, 800);
+  },
 };
 
 export default actions;

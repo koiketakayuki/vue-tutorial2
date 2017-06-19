@@ -1,7 +1,7 @@
 import VIEW_MODE from './view-mode';
 
 const mutations = {
-  goToListMode() {
+  goToListMode(state) {
     state.viewMode = VIEW_MODE.LIST_MODE;
   },
   goToEditMode(state) {
@@ -14,7 +14,7 @@ const mutations = {
     state.viewMode = VIEW_MODE.CREATE_MODE;
   },
   goToSortMode(state) {
-    state.viewMode = VIEW_MODE.CHANGE_ORDER_MODE;
+    state.viewMode = VIEW_MODE.SORT_MODE;
   },
   receiveShop(state, shop) {
     state.shop = shop;
@@ -27,6 +27,13 @@ const mutations = {
   },
   setCategoryId(state, categoryId) {
     state.selectedCategoryId = categoryId;
+  },
+  displayInformation(state, message) {
+    state.message = message;
+    state.hasInformation = true;
+  },
+  closeInformation(state,) {
+    state.hasInformation = false;
   },
 };
 
